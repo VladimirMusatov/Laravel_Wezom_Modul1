@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\PostController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 
 
@@ -28,7 +28,7 @@ Route::group(['middleware' => ['role:admin']], function(){
     Route::get('/admin',[AdminController::class,'index'])->name('admin');
     Route::get('/create',[AdminController::class,'create'])->name('create');
     Route::get('/delete/{id}',[AdminController::class, 'destroy'])->name('delete');
-    Route::get('/store',[AdminController::class,'store'])->name('store');
+    Route::post('/store',[AdminController::class,'store'])->name('store');
     Route::put('/publish/{id}',[AdminController::class,'publish'])->name('publish');
 
 

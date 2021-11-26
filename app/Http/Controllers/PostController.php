@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use App\Events\PostHasViewed;
 use App\Models\Post;
 use App\Models\User;
 
@@ -17,8 +20,10 @@ class PostController extends Controller
 
     }
 
-    public function show(Post $id){
+    public function show($id){
 
-        return view('show', compact('id'));
+        $post = Post::findOrFail($id);
+        event(new PostHasViewed($post));
+        return view('show', compact('post'));
     }
 }

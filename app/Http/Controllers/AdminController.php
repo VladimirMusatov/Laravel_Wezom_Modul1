@@ -23,6 +23,14 @@ class AdminController extends Controller
     public function store(Request $request){
 
         $data = $request->all();
+
+        $filename = $data['image']->getClientOriginalName();
+
+        //Сохраняем картинку
+        $data['image']->move(Storage::path('/public/image/news/').'origin/',$filename);
+
+        $data['image'] = $filename;
+
         Post::create($data);
         return redirect()->route('admin');
     }

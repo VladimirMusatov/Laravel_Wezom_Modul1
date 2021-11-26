@@ -24,14 +24,14 @@
       <td>{{$post->text}}</td>
       <td>
             @if(($post->status) == 0)
-                 Отзыв не опубликован
+                 Новость опубликована
            @else
-                Отзыв опубликован
+                 Новсоть опубликована
            @endif
       </td>
 
       <td>
-        <a class="btn btn-danger" href="{{route('delete', $post)}}">Удалить отзыв</a>
+        <a class="btn btn-danger" href="{{route('delete', $post)}}">Удалить новость</a>
       </td>      
              
       <td>
@@ -40,7 +40,7 @@
             @csrf
             @method('PUT')
             <input type="hidden" value="1" name="status">
-            <button type="submit" class="btn btn-success">Опубликовать отзыв</button>
+            <button type="submit" class="btn btn-success">Опубликовать новость</button>
           </form>
          @endif
       </td>
