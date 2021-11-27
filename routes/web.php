@@ -20,9 +20,13 @@ Route::redirect('/', '/home');
 
 Auth::routes();
 
+
+//Общедоступные роуты
 Route::get('/home',[PostController::class,'index'])->name('home');
 Route::get('/show/{id}',[PostController::class,'show'])->name('show');
 
+
+// Роуты доступные лишь пользователю с ролью admin
 Route::group(['middleware' => ['role:admin']], function(){
 
     Route::get('/admin',[AdminController::class,'index'])->name('admin');

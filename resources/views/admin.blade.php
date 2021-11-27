@@ -23,17 +23,18 @@
       <td>{{$post->description}}</td>
       <td>{{$post->text}}</td>
       <td>
-            @if(($post->status) == 0)
+
+           @if(($post->status) == 0)
                  Новость опубликована
            @else
-                 Новсоть опубликована
+                 Новость опубликована
            @endif
       </td>
 
       <td>
         <a class="btn btn-danger" href="{{route('delete', $post)}}">Удалить новость</a>
       </td>      
-             
+      <!-- если новость не опубликована появляеться конпка -->
       <td>
          @if(($post->status) == 0)      
           <form action="{{route('publish', $post)}}" method="POST">

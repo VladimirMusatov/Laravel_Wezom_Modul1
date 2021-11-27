@@ -19,7 +19,9 @@ class CreatePostsTable extends Migration
             $table ->text('description');
             $table ->text('text');
             $table->string('image');
+            //Количесво просмотров новости
             $table->integer('view_count')->default(0);
+            //Статус(Опубликована или нет)
             $table->boolean('status')->default(false);
             $table ->timestamps();
         });
