@@ -9,7 +9,7 @@
 	<h1>Название :{{$post->title}}</h1>
 	<p>Описание  :{{$post->description}}</p>
 	<p>Количество просмотров:{{$post->view_count}}</p>
-	<p><img src="{{Storage::url('image/news/origin/'.$post->image)}}"></p>
+	<p><img src="{{Storage::url('image/news/origin/'. $post->image)}}"></p>
 	<div class="text">
 		{{$post->text}}
 	</div>

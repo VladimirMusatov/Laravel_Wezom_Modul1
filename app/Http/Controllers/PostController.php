@@ -13,8 +13,30 @@ class PostController extends Controller
 {
     public function index(Request $request){
 
+
+        $sort = $request->sort;
+
         $PostQuery = Post::query();
+
+        if($sort == 1){
+            $PostQuery ->orderBy('created_at', 'desc');
+        }
+
+        elseif($sort == 2){
+            $PostQuery ->orderBy('created_at', 'asc');
+        } 
+
+        elseif($sort == 3){
+            $PostQuery ->orderBy('view_count' , 'desc');
+        }
+
+        elseif($sort == 4){
+            $PostQuery ->orderBy('view_count' , 'asc');
+        }  
+
+        //Выводить только опубликованные новости
         $PostQuery->where('status','=', '1');
+
         $posts = $PostQuery->paginate(4)->withPath("?" . $request->getQueryString());
         return view('home',compact('posts'));
 

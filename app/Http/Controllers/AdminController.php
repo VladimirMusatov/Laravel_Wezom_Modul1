@@ -26,8 +26,12 @@ class AdminController extends Controller
 
         $filename = $data['image']->getClientOriginalName();
 
-        //Сохраняем картинку
         $data['image']->move(Storage::path('/public/image/news/').'origin/',$filename);
+
+        //Сохраняем обрезанное изображение для вывода в списке новостей
+        $thumbnail = Image::make(Storage::path('/public/image/news/').'origin/'.$filename);
+        $thumbnail ->fit(300,300);
+        $thumbnail->save(Storage::path('/public/image/news/').'thumbnail/'.$filename);
 
         $data['image'] = $filename;
 
