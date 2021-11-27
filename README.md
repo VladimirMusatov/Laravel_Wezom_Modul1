@@ -7,3 +7,11 @@
 
 Счётчик количества просмотров страинцы я реализовал через события.
 Для выводи изображений я использовал  Intervention Image.
+
+Для того что-бы запутить проект необходимо скачать этот репозиторий
+git clone https://github.com/VladimirMusatov/Laravel_Wezom_Modul1
+
+Установаить все зависимости через composer
+composer install
+
+Скопировать файл env.exapmle и переиминовать его в .env
