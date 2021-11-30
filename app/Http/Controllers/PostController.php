@@ -11,8 +11,8 @@ use App\Models\User;
 
 class PostController extends Controller
 {
-    public function index(Request $request){
 
+    public function index(Request $request){
 
         $sort = $request->sort;
 
@@ -42,6 +42,7 @@ class PostController extends Controller
 
     }
 
+    //Просмотр одной новости
     public function show($id){
 
         $post = Post::findOrFail($id);

@@ -11,10 +11,10 @@
 Для того что-бы запуcтить проект необходимо скачать этот репозиторий
 git clone https://github.com/VladimirMusatov/Laravel_Wezom_Modul1
 
-Установаить все зависимости через composer
+Установить все зависимости через composer
 composer install
 
-Скопировать файл env.exapmle и переиминовать его в .env
+Скопировать файл env.example и переименовать его в .env
 
 Сгенерировать app_key
 php artisan key:generate
@@ -41,5 +41,4 @@ php artisan permission:create-role admin
 Конкретно изменить role_id с 1 на 2.
 
 Если картнка не отображаеться на страниц новости необходимо прописать 
-
 php artisan storage:link
