@@ -21,7 +21,7 @@
   </div>
   <div class="mb-3">
     <label class="form-label">Текст</label>
-    <input name="text" type="text" class="form-control" name="text">
+    <textarea name="text"  type="text" class="form-control"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Добавить новость</button>
 </form>
