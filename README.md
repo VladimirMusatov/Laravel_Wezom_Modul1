@@ -40,7 +40,7 @@ DB_PASSWORD=
 php artisan migrate
 
 Запрустить Сиды
-php artisan php artisan db:seed --class=AdminSeeder
+php artisan db:seed --class=AdminSeeder
 
 Если картнка не отображаеться на страниц новости необходимо прописать 
 php artisan storage:link
