@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 
@@ -24,9 +24,9 @@ Auth::routes();
 //Общедоступные роуты
 
 //Просмотр списка новостей с разбивкой по страницам
-Route::get('/home',[PostController::class,'index'])->name('home');
+Route::get('/home',[HomeController::class,'index'])->name('home');
 //Просмотр одной новости
-Route::get('/show/{id}',[PostController::class,'show'])->name('show');
+Route::get('/show/{id}',[HomeController::class,'show'])->name('show');
 
 
 // Роуты доступные лишь пользователю с ролью admin
