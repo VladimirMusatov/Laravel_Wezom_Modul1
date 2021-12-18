@@ -40,7 +40,11 @@ DB_PASSWORD=
 php artisan migrate
 
 Запрустить Сиды
-php artisan db:seed --class=AdminSeeder
+php artisan db:seed
+
+Почта и пароль от админки
+Почта: admin@admin.com
+Пароль: admin
 
 Если картнка не отображаеться на страниц новости необходимо прописать 
 php artisan storage:link

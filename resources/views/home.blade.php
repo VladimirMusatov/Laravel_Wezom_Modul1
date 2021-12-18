@@ -17,9 +17,9 @@
       <option value="3">Новости с самым высоким рейтингом</option>
       <option value="4">Новость с самым низким рейтингом</option>
     </select>
-    <div>  
-      <button type="submit" class="btn col-sm btn-primary mb-3">Фильтр</button>
-      <a href="{{route('home')}}" class="btn col-sm btn-primary mb-3">Сброс Фильтра</a>  
+    <div style="display:flex; flex-direction: column;">  
+      <button type="submit" class="btn col-sm btn-primary mb-3" style="width: 25%">Фильтр</button>
+      <a href="{{route('home')}}" class="btn col-sm btn-primary mb-3" style="width: 25%">Сброс Фильтра</a>  
     </div>
   </form>
 
