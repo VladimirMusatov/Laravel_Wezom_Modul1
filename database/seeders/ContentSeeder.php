@@ -17,8 +17,10 @@ class ContentSeeder extends Seeder
         for($i = 1; $i <= 6; $i++)
         {
 
-        $rand = rand(0, 1);
-        $date = rand(10, 60);
+        $status = rand(0, 1);
+        $second = rand(10, 60);
+        $hour = rand(10,23);
+        $year = rand(1988, 2020);
         $view_count = rand(0, 77);
         
         DB::table('posts')->insert([
@@ -27,9 +29,9 @@ class ContentSeeder extends Seeder
             'text' => 'text'. $i,
             'image' => 'image'. $i,
             'view_count' => $view_count,
-            'status' => $rand,
-            'created_at' => '2021-12-20 20:54:'. $date,
-            'updated_at' => '2021-12-20 20:54:'. $date,
+            'status' => $status,
+            'created_at' => $year.'-12-20 '.$hour.':54:'. $second,
+            'updated_at' => $year.'-12-20 '.$hour.':54:'. $second,
             ]);
         }
     }
