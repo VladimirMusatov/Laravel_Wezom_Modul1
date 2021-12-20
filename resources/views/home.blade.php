@@ -5,17 +5,16 @@
 
   <!-- Форма для фильтраци -->
   <form  method="GET" action="{{route('home')}}">
-    <!-- Флажок для фильтрации по статусу новости -->
 
     <!-- Фильтрация по дате публикаций -->
       <select name="sort" class="form-select mt-3 mb-3" aria-label="Default select example">
-      <option selected>
+      <option>
         Сортировать по
       </option>
-      <option value="1">Сначала новые</option>
-      <option value="2">Сначала старые</option>
-      <option value="3">Новости с самым высоким рейтингом</option>
-      <option value="4">Новость с самым низким рейтингом</option>
+      <option value="1" @if($sort == 1)selected @endif>Сначала новые</option>
+      <option value="2" @if($sort == 2)selected @endif>Сначала старые</option>
+      <option value="3" @if($sort == 3)selected @endif>Новости с самым высоким рейтингом</option>
+      <option value="4" @if($sort == 4)selected @endif>Новость с самым низким рейтингом</option>
     </select>
     <div style="display:flex; flex-direction: column;">  
       <button type="submit" class="btn col-sm btn-primary mb-3" style="width: 25%">Фильтр</button>

@@ -37,7 +37,7 @@ class HomeController extends Controller
         $PostQuery->where('status','=', '1');
 
         $posts = $PostQuery->paginate(4)->withPath("?" . $request->getQueryString());
-        return view('home',compact('posts'));
+        return view('home',['posts' => $posts, 'sort' => $sort]);
     }
 
     //Просмотр одной новости
