@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         $filename = $data['image']->getClientOriginalName();
 
-        $data['image']->move(Storage::path('/public/image/news/').'origin/',$filename);
+        $data['image']->move(Storage::path('/public'),$filename);
 
         $data['image'] = $filename;
 
