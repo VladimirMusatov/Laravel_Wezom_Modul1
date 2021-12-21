@@ -5,7 +5,7 @@
 
 
 
-<form enctype="multipart/form-data" method="POST" action="{{route('store')}}" class="mt-5">
+<form style="width: 50%; margin: 0 auto;" enctype="multipart/form-data" method="POST" action="{{route('store')}}" class="mt-5">
   <div class="mb-3">
     @csrf
     <label class="form-label">Название Новости</label>
