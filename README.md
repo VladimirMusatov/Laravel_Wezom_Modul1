@@ -39,7 +39,7 @@ DB_PASSWORD=
 Запустить миграции
 php artisan migrate
 
-Запрустить Сиды
+Запустить Сиды
 php artisan db:seed
 
 Почта и пароль от админки
