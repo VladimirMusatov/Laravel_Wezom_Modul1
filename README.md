@@ -31,6 +31,9 @@ composer install
 Сгенерировать app_key
 php artisan key:generate
 
+Также необходимо создать символическую ссылку
+php artisan storage:link
+
 Изменить в файлке .env строчки
 DB_DATABASE=laravel
 DB_USERNAME=root
@@ -45,6 +48,3 @@ php artisan db:seed
 Почта и пароль от админки
 Почта: admin@admin.com
 Пароль: admin
-
-Если картнка не отображаеться на страниц новости необходимо прописать 
-php artisan storage:link

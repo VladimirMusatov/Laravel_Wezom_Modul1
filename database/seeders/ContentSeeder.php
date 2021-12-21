@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 class ContentSeeder extends Seeder
 {
@@ -14,25 +14,6 @@ class ContentSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 19; $i++)
-        {
-
-        $status = rand(0, 1);
-        $second = rand(10, 59);
-        $hour = rand(10,23);
-        $year = rand(1988, 2020);
-        $view_count = rand(0, 77);
-        
-        DB::table('posts')->insert([
-            'title' => 'title' . $i,
-            'description'=>'description' . $i,
-            'text' => 'text'. $i,
-            'image' => 'image'. $i,
-            'view_count' => $view_count,
-            'status' => $status,
-            'created_at' => $year.'-12-20 '.$hour.':54:'. $second,
-            'updated_at' => $year.'-12-20 '.$hour.':54:'. $second,
-            ]);
-        }
+        Post::factory()->count(20)->create();
     }
 }
