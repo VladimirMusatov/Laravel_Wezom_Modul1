@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table ->string('title');
             $table ->text('description');
             $table ->text('text');
-            $table->string('image');
+            $table->integer('category_id');
             //Количесво просмотров новости
             $table->integer('view_count')->default(0);
             //Статус(Опубликована или нет)

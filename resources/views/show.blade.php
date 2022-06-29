@@ -9,7 +9,7 @@
 	<h1>Название :{{$post->title}}</h1>
 	<p>Описание  :{{$post->description}}</p>
 	<p>Количество просмотров:{{$post->view_count}}</p>
-	<p><img src="{{Storage::url($post->image)}}"></p>
+	<p>Категория: {{$post->category->title}}</p>
 	<div class="text">
 		{{$post->text}}
 	</div>

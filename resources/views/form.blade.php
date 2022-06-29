@@ -11,13 +11,17 @@
     <label class="form-label">Название Новости</label>
     <input name="title" type="text" class="form-control">
   </div>
+
+  <select name="category_id" class="mb-3 form-select" aria-label="Пример выбора по умолчанию">
+  <option selected>Выберете категорию</option>
+  @foreach($categories as $category)
+  <option value="{{$category->id}}">{{$category->title}}</option>
+  @endforeach
+  </select>
+
   <div class="mb-3">
     <label class="form-label">Краткое описание</label>
     <input name="description" type="text" class="form-control">
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Картинка</label>
-    <input name="image" type="file" class="form-control">
   </div>
   <div class="mb-3">
     <label class="form-label">Текст</label>

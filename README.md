@@ -20,9 +20,6 @@ composer install
 Сгенерировать app_key
 php artisan key:generate
 
-Также необходимо создать символическую ссылку
-php artisan storage:link
-
 Изменить в файлке .env строчки
 DB_DATABASE=laravel
 DB_USERNAME=root

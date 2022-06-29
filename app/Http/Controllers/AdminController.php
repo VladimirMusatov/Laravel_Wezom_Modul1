@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
@@ -16,21 +15,18 @@ class AdminController extends Controller
         return view('admin', compact('posts'));
     }
 
-    //Добавление новости с возможностью прикрепить изображение
+    //Добавление новости
     public function create(){
-        return view('form');
+
+        $categories = Category::all();
+
+        return view('form',compact('categories'));
     }
 
     //Сохранение новости в базу данных
     public function store(Request $request){
 
         $data = $request->all();
-
-        $filename = $data['image']->getClientOriginalName();
-
-        $data['image']->move(Storage::path('/public'),$filename);
-
-        $data['image'] = $filename;
 
         Post::create($data);
         return redirect()->route('admin');
